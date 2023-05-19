@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie add</title>
+    <link rel='stylesheet' href='/css/style.css' />
+</head>
+
+<body>
+    <figure>
+        <img src="/img/videoclub.jpg" alt="Logo Video Club">
+      </figure>
+    
+      <body>
+        <main>
+        
+          <!-- form con usuario y password -->
+          <form id="form" action="/user/login" method="post" class="register-form"  >
+            <h3 class="register-tittle">Ingresar con Contraseña</h3>
+            <label for="email" class="register-label">Nombre de usuario:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="nombre de usuario"
+              class="register-input"
+            />
+      
+      
+            <label for="password" class="register-label">Contraseña:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="contraseña"
+              class="register-input"
+            />
+    
+              
+            <div>
+              <input type="checkbox" 
+              name="rememberme"  
+              id="rememberme"
+              class="register-checkbox">
+              <p>Recordame</p>
+            </div>
+      
+            
+            <button type="submit" class="submit">Iniciar sesion</button>
+            <div class="ancor-conteiner">
+              <a href="/user/register" class="register-tologin">Crear cuenta</a>
+            </div>
+          </form>
+        </main>
+      
+      </body>
+
+</html>
