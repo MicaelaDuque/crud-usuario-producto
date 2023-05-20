@@ -15,7 +15,7 @@
     
       <body>
         <main>
-          <form class="register-form" action="/user/register" method="post" enctype="multipart/form-data" id = "form-register">
+          <form class="register-form" action="/register" method="post" id = "form-register">
             
         
             <h3 class="register-tittle">
@@ -32,17 +32,6 @@
               value="<%= locals.oldBody && oldBody.name? oldBody.name:'' %>"
               />
         
-            
-              <label for="lastname">Apellido: </label>
-              <input
-                type="text"
-                id="lastname"
-                name="lastname"
-                placeholder="Ingresa tu apellido"
-                minlength="4"
-                class="register-input"
-                value="<%= locals.oldBody && oldBody.lastname? oldBody.lastname:'' %>"
-              />
         
               
               
@@ -67,14 +56,6 @@
               />
         
              
-              
-              <label for="confirmPassword">Confirmar Contraseña: </label>
-              <input
-              type="password"
-              id="confirmPassword"
-              name="confirmPassword"
-              class="register-input"
-              />
         
               <label for="image">Ingresa una imagen: </label>
               <input
@@ -89,7 +70,7 @@
         
         
               <button class="submit" type="submit" id="btn-register">Crear cuenta</button>
-              <button class="submit" type="reset">Reiniciar Formulario</button>
+
             </form>
           </main>
              

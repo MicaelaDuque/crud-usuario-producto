@@ -1,9 +1,14 @@
 const express = require('express');
-const users = express.Router();
+var router = express.Router();
 const usersController = require('../controllers/usersController');
 
-users.get('/register', usersController.register);
-users.get('/login', usersController.login);
 
+// Ruta para el formulario de Register
+router.get('/register', usersController.register);
+router.post ("/register", usersController.processRegister);
 
-module.exports = users;
+// Ruta para el formulario de Login
+router.get('/login', usersController.login);
+router.post("/login", usersController.processLogin)
+
+module.exports = router;
