@@ -27,6 +27,9 @@
               placeholder="Email"
               class="register-input"
             />
+            <% if (locals.error && error.email) { %>
+             <p style="color: red;"><%= error.email.msg %></p>
+            <% } %>
       
       
             <label for="password" class="register-label">Contraseña:</label>
@@ -37,6 +40,9 @@
               placeholder="contraseña"
               class="register-input"
             />
+            <% if (locals.error && error.password) { %>
+              <p style="color: red;"><%= error.password.msg %></p>
+             <% } %>
     
              
             

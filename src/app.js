@@ -1,7 +1,8 @@
 const express = require('express');
 const path = require('path');
 const userRoutes = require('./routes/usersRoutes');
-
+const session = require("express-session")
+const loggMiddleware =require('./middleware/auth')
 
 const indexRouter = require('./routes/index');
 
@@ -13,6 +14,12 @@ const app = express();
 app.set('views', path.resolve(__dirname, './views'));
 app.set('view engine', 'ejs');
 
+app.use(session({
+    secret : 'Este mensage es secreto',
+    resave : false,
+    saveUninitialized : false
+}));
+app.use(loggMiddleware)
 
 app.use(express.static(path.resolve(__dirname, '../public')));
 
