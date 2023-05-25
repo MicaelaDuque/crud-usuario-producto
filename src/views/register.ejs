@@ -54,12 +54,15 @@
               class="register-input"
               placeholder="Ingresar contraseña"
               />
-              <label for="password">Categoria: </label>
-              <select name="category" id="">
-                <option selected disabled>Selecciona una Categoria</option>
-                <option value="2">User</option>
-                <option value="1">Admin</option>
-              </select>
+              <% if (locals.isAdmin) { %>
+                <label for="password">Categoria: </label>
+                <select name="category" id="">
+                  <option selected disabled>Selecciona una Categoria</option>
+                  <option value="2">User</option>
+                  <option value="1">Admin</option>
+                </select>
+              <% } %>
+              
         
              
         

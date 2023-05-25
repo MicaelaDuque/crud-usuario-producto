@@ -13,10 +13,11 @@ const userController = {
 
     processRegister: async(req, res) =>{
         try {
+            let pass = await bcrypt.hash(req.body.password, 10)
             let user = {
                 name: req.body.name,
                 email: req.body.email,
-                password: await bcrypt.hash(req.body.password, 10),
+                password: pass,
                 user_category_id: req.body.category? req.body.category : 2
             };
 console.log (req.body);
