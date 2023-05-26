@@ -19,9 +19,12 @@
     <p>RELEASE DATE: <%= movie.release_date %> </p>
     <br>
     <section>
-        <a class="botonModificar" href="/movies/edit/<%= movie.id %>">Modificar</a>
-        <a class="botonBorrar" href="/movies/delete/<%= movie.id %>">Borrar</a>
-        <a class="botonVolver" href="/movies">Volver</a>
+        <% if (locals.isAdmin) { %>
+            <a class="botonModificar" href="/movies/edit/<%= movie.id %>">Modificar</a>
+            <a class="botonBorrar" href="/movies/delete/<%= movie.id %>">Borrar</a>
+            <a class="botonVolver" href="/movies">Volver</a>
+        <% } %>
+        
     </section>
 
 </body>
