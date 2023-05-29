@@ -17,11 +17,26 @@ const moviesController = {
                 res.render('moviesList.ejs', {movies})
             })
     },
-    'detail': (req, res) => {
-        db.Movie.findByPk(req.params.id)
-            .then(movie => {
-                res.render('moviesDetail.ejs', {movie});
-            });
+    'detail': async (req, res) => {
+        try {
+            let movie = await db.Movie.findByPk(req.params.id, {
+            include: [
+                {all:true,
+                nested: true}
+            ]
+        })
+        //res.json ({movie})
+        res.render('moviesDetail.ejs', {movie})
+
+        } catch (error) {
+            res.json ({error})
+        }
+        
+        //res.render('moviesDetail.ejs', {movie})
+
+            //.then(movie => {
+                //res.render('moviesDetail.ejs', {movie});
+            //});
     },
     'new': (req, res) => {
         db.Movie.findAll({

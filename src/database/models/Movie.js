@@ -32,6 +32,7 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
+        deletedAt: "deleted_at",
         deletedAt: false
     }
     const Movie = sequelize.define(alias,cols,config);

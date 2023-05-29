@@ -17,6 +17,14 @@
     <p>AWARDS: <%= movie.awards %> </p>
     <p>LENGTH: <%= movie.length + ' min'%> </p>
     <p>RELEASE DATE: <%= movie.release_date %> </p>
+    <p>ACTORES</p>
+    <%movie.actors.forEach(actor => { %> 
+        <%= actor.first_name %> <%= actor.last_name %>,
+       
+
+       <%});%>
+    
+    <p>GÉNERO: <%=movie.genre.name %> </p> 
     <br>
     <section>
         <% if (locals.isAdmin) { %>
